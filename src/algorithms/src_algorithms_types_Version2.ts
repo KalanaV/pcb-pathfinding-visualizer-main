@@ -4,7 +4,13 @@ export interface GridCell {
   x: number;
   y: number;
   type: CellType;
-  cost?: number;
+  cost?: number; // For extensions (via cost, weights)
 }
 
 export type Grid = GridCell[][];
+
+export interface PathfindingStep {
+  visited: GridCell[];
+  frontier: GridCell[];
+  path: GridCell[];
+}
